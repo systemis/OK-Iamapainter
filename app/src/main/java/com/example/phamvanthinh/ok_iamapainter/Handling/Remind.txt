@@ -1,0 +1,178 @@
+
+* Các thư viện ngoài cho app :
+    1.  compile 'de.hdodenhof:circleimageview:2.1.0 ' - dùng để vẽ hình ảnh theo kiểu hình tròn.
+    2.  compile 'com.larswerkman:HoloColorPicker:1.5' - dùng để hiện thì bản màu.
+
+
+ Cách thay đổi thuộc tính cõ vẽ kiểu thủ công ( tốn thời gian nhưng vẫn hiệu quả );
+ if (colorList.size() > 1){
+    if (ia != ppList.size() - 1){
+      canvas.drawPath(ppList.get(ia).getPathToDraw(), paint);
+        }else {
+            Paint dm = paint;
+            dm.setColor(Color.RED);
+            canvas.drawPath(ppList.get(ia).getPathToDraw(), dm);
+        }
+    }else {
+      canvas.drawPath(ppList.get(ia).getPathToDraw(), paint);
+      }
+q
+
+ Cách thay dổi thuộc tính cõ vẽ kiểu mới ( không tốn nhiều thời gian viết code và chỉnh sửa nhưng rất chi là tiện dụng và hiệu quả );
+ if (ppList.size() > 0){
+
+             custom(paint);
+
+             1: for (int ia = 0 ; ia < ppList.size(); ia++){
+                 canvas.drawPath(ppList.get(ia).getPathToDraw(), paintList.get(ia));
+             }
+
+             2: for (ChillOfPoint ofPoint : ppList)
+            {
+                canvas.drawPath(ofPoint.getPathToDraw(), paintList.get(ppList.indexOf(ofPoint)));
+
+            }
+            nên dùng 2 hơn 1 vì nó sẽ giúp cho vòng lập chạy nhanh hơn !
+
+
+
+         }
+
+
+Xoá đường đã vẽ ra : Đang nghiên cứu
+
+                    if (clearCanvasArea){
+                        Log.d("Action", "Ban dang thuc hien chuc nang xoa");
+
+                        Paint mPaint = paintList.get(paintList.size() - 1);
+                        mPaint.setColor(Color.WHITE);
+                        paintList.set(paintList.size() - 1, mPaint);
+
+                        canvas.drawPath(ofPoint.getPathToDraw(), paintList.get(ppList.indexOf(ofPoint)));
+
+
+                        clearCanvasArea = false;
+                    }else{
+
+                        Paint mPaint = paintList.get(paintList.size() - 1);
+                        mPaint.setColor(colorList.get(colorList.size() - 1));
+                        paintList.set(paintList.size() - 1, mPaint);
+
+                        canvas.drawPath(ofPoint.getPathToDraw(), paintList.get(ppList.indexOf(ofPoint)));
+
+
+                    }
+
+
+
+ if (ppList.size() <= 1){
+                Log.d("ActionWhenChange", "Change From First");
+                colorList.set(0,color);
+                strokeWidthList.set(0,Width);
+            }if (ppList.size() > 1){
+                if (colorList.indexOf(color) == -1){
+                    colorList.add(color);
+                    strokeWidthList.add(Width);
+                }else{
+                    ChangePaintPropertes(color, Width);
+                    closeChangeColorC = false;
+                }
+            }
+
+            if (closeChangeColorC != true) { changeColorC = true; }
+
+
+
+
+ Hàm này dùng để lưu tác phẩm đã vẻ vào thư viên ảnh của điện thoại đang hiện hành
+    public void SaveImagetoGallery(){
+
+        layoutCPProduct.setDrawingCacheEnabled(true);
+
+        Bitmap bitmaptoSave = layoutCPProduct.getDrawingCache();
+
+        ContentResolver cr = getActivity.getContentResolver();
+        String ImageName = "bitmapIAM";
+
+        for (int i = 0;i < getCurrentDateAndTime().length; i++) ImageName = ImageName + "-" + getCurrentDateAndTime()[i];
+
+        String mota = "My bitmap created by I am a painter app ";
+        String savedURL = MediaStore.Images.Media
+                .insertImage(cr, bitmaptoSave, ImageName, mota);
+
+        Toast.makeText(context,
+                savedURL,
+                Toast.LENGTH_LONG).show();
+
+
+        layoutCPProduct.destroyDrawingCache();
+    }
+
+
+
+        // Dialog custom theo cach thu cong ( ton nhieu dung luong ram, xau, nen dung changePainColorDialog);
+        public Dialog dialogChangeColor() {
+            final int[] colorChoice = {PaintColor};
+            final Dialog mDialog = new Dialog(CreateNewScreen.this);
+            mDialog.setContentView(R.layout.layout_dialog_change_paint_color);
+            mDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+            Button applyChoiceColor = (Button) mDialog.findViewById(R.id.applyChoiceColorPicker);
+            Button cancelChoiceColor = (Button) mDialog.findViewById(R.id.cancelChoiceColorPicker);
+
+            // Listenner to change paint color or this dialog dissmis
+            View.OnClickListener listenerPickerColor = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (v.getId() == R.id.applyChoiceColorPicker) {
+
+                        // Thay doi mau cua cac button doi mau don gian cho co ve
+                        if (colorChoice[0] != PaintColor) {
+                            // Đưabàn màu viền tất cả các button lựa chọn màu đơn giản cho cõ vẽ về vị trí ban đầu - màu đen
+                            for (int i = 0; i < btnChangePaintSimpleColor.length; i++)
+                                btnChangePaintSimpleColor[i].setBorderColor(Color.BLACK);
+                            PaintColor = colorChoice[0];
+                        }
+                        layoutToDraw.changePaintSingle(PaintColor, StrokeWidth);
+
+                        mDialog.dismiss();
+                    } else mDialog.dismiss();
+
+                }
+            };
+
+            applyChoiceColor.setOnClickListener(listenerPickerColor);
+            cancelChoiceColor.setOnClickListener(listenerPickerColor);
+
+            final ColorPicker changeColor = (ColorPicker) mDialog.findViewById(R.id.pickertoChangePaintColor);
+            changeColor.setOldCenterColor(PaintColor);
+            changeColor.setOnColorChangedListener(new ColorPicker.OnColorChangedListener() {
+                @Override
+                public void onColorChanged(int color) {
+                    colorChoice[0] = color;
+                }
+            });
+
+            mDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                @Override
+                public void onDismiss(DialogInterface dialog) {
+                    // Do something when this dialog cancel
+
+                }
+            });
+
+            return mDialog;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+

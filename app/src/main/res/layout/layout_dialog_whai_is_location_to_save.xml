@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/canle10dp"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn muốn lưu vào đâu ?"
+            android:textSize="24dp"
+            android:textColor="@color/colorButtonLRV1"
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/canle5dp"
+        >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/groupForSLSelect"
+            >
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titleSavetoThisApp"
+                android:id="@+id/rbSavetoApp"
+                />
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/titleSavtoGallery"
+                android:id="@+id/rbSavetoGallery"
+
+                />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/canle10dp"
+        >
+
+        <Button
+            style="@style/StyleButtonLeft"
+            android:text="@android:string/cancel"
+            android:id="@+id/btnCancel_SaveProduct"
+            />
+
+        <Button
+            style="@style/StyleButtonRight"
+            android:text="@android:string/ok"
+            android:id="@+id/btnSaveProduct_WidthChoice"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

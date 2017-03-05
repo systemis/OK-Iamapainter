@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:minHeight="200dp"
+
+    android:padding="@dimen/canle20dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:text="Tảo bản vẽ :"
+        android:textColor="@color/colorDen"
+
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/canle10dp"
+        android:hint="Tên sản phẩm "
+        android:text="Bản vẻ mới "
+        android:id="@+id/importProdutctName_Splite"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/canle20dp"
+        >
+
+        <Button
+            style="@style/StyleButtonLeft"
+            android:text="@android:string/cancel"
+            android:id="@+id/btnCancelSaveProduct_Sqlite"
+            />
+
+        <Button
+            style="@style/StyleButtonRight"
+            android:text="@android:string/ok"
+            android:id="@+id/btnSaveProduct_Sqlite"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

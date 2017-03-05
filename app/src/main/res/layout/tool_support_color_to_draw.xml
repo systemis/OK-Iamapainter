@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_marginLeft="@dimen/Width_ButtonAboutViewFlipper"
+    android:layout_marginRight="@dimen/Width_ButtonAboutViewFlipper"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingRight="@dimen/canle10dp"
+                >
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    style="@style/ThemeForImageViewToChangePaintSimpleColor"
+                    android:src="@color/colorDen"
+                    app:civ_border_color = "@color/RedColor"
+                    app:civ_border_width="2dp"
+                    android:id="@+id/defaultPainColor"
+                    android:onClick="btnPaintChangColorSimple"
+                    android:layout_gravity="center"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    style="@style/ThemeForImageViewToChangePaintSimpleColor"
+                    android:src="@color/RedColor"
+                    app:civ_border_color = "@android:color/background_dark"
+                    app:civ_border_width="2dp"
+                    android:id="@+id/RedtPainColor"
+                    android:onClick="btnPaintChangColorSimple"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    style="@style/ThemeForImageViewToChangePaintSimpleColor"
+                    android:src="#dfe627"
+                    app:civ_border_color = "@android:color/background_dark"
+                    app:civ_border_width="2dp"
+                    android:id="@+id/YellowPaintColor"
+                    android:onClick="btnPaintChangColorSimple"/>
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    style="@style/ThemeForImageViewToChangePaintSimpleColor"
+                    android:src="@color/PaintOrangeColor"
+                    app:civ_border_color = "@android:color/background_dark"
+                    app:civ_border_width="2dp"
+                    android:id="@+id/OrangePainColor"
+                    android:onClick="btnPaintChangColorSimple"
+                    android:layout_centerVertical="true"
+                    android:layout_alignEnd="@+id/horizontalScrollView" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+
+            >
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/Width_SingleTool"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/changePaintColor"
+                android:layout_gravity="center"
+                android:src="@mipmap/watercolor"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+
+                >
+
+            </ImageButton>
+
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/Width_SingleTool"
+                android:layout_marginLeft="10dp"
+                android:onClick="btnPaintChangColorSimple"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/eraser"
+                android:scaleType = "centerInside"
+                android:layout_gravity="center"
+                android:id="@+id/clearCanvas"
+
+                />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

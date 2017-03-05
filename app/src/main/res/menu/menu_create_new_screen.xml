@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Svae"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_save"
+        android:id="@+id/saveProduct"
+        />
+
+    <item
+        android:title="Pick Image from gallery"
+        android:id="@+id/actiontoPickImageFromGallery"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_camera"
+        />
+
+</menu>

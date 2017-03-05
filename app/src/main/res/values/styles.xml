@@ -1,0 +1,75 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:icon">@mipmap/home_icon</item>
+    </style>
+
+
+    <style name="StyleActionBarScreen">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+
+    </style>
+
+    <style name="ThemeForImageViewToChangePaintSimpleColor">
+        <item name="android:layout_width">38dp</item>
+        <item name="android:layout_height">@dimen/Width_SingleTool</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <style name="StyleButtonRight">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:textColor">@color/colorButtonLRV1</item>
+
+    </style>
+
+    <style name="StyleButtonLeft">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">100dp</item>
+        <item name="android:textColor">@color/colorButtonLRV1</item>
+
+
+    </style>
+
+
+    <style name="StyleChecBoxChoice_SaveProduct">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableRight">?android:attr/listChoiceIndicatorMultiple</item>
+        <item name="android:button">@null</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textSize">20dp</item>
+
+    </style>
+
+
+    <style name="StyleToolAboutArt">
+
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+
+    </style>
+
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/Width_ButtonAboutViewFlipper"
+        android:layout_marginRight="@dimen/Width_ButtonAboutViewFlipper"
+        android:layout_centerHorizontal="true"
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="@dimen/Width_SingleTool"
+            android:src="@color/colorDen"
+            android:layout_gravity="center"
+            android:id="@+id/showColorNow"
+        android:onClick="Show_Custom_Stroke_Width"
+
+    />
+
+    <!--<SeekBar-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="28dp"-->
+            <!--android:max="25"-->
+            <!--android:progress="5"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:id="@+id/seekBartoCustomWidthStroke"-->
+            <!--android:layout_marginLeft="@dimen/canle10dp"/>-->
+
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/defaultbrush_icon"
+        android:layout_gravity="center"
+        android:id="@+id/btnDefaultBrush"
+        />
+
+
+
+    <ImageButton
+            android:layout_width="15dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/pencil_icon"
+            android:id="@+id/imgSetPaintAphal"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/marginleft_tools_fBrush"
+        />
+
+
+    <ImageButton
+        android:layout_width="15dp"
+        android:layout_height="70dp"
+        android:background="@mipmap/bigpen_icon"
+        android:layout_marginLeft="@dimen/marginleft_tools_fBrush"
+        android:id="@+id/btnBigBrush"
+        android:layout_gravity="center"
+        />
+
+
+    <!--<ImageButton-->
+        <!--android:layout_width="15dp"-->
+        <!--android:layout_height="70dp"-->
+        <!--android:background="@mipmap/waterpen_icon"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="@dimen/marginleft_tools_fBrush"-->
+        <!--android:id="@+id/btnWaterBrush"-->
+
+        <!--/>-->
+
+</LinearLayout>

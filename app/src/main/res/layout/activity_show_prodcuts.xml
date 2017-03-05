@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_show_prodcuts"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5D635F"
+    tools:context="com.example.phamvanthinh.ok_iamapainter.ShowProdcuts">
+
+
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="290dp"
+        android:id="@+id/imageTestShowProdcuct"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="@dimen/canle20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/canle20dp"
+
+        />
+    <HorizontalScrollView
+
+        android:layout_width="wrap_content"
+        android:layout_height="290dp"
+        android:layout_centerVertical="true"
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/showProdcuts"
+
+            >
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/managet_tools_art"
+        android:visibility="invisible"
+        >
+
+        <ImageButton
+            style="@style/StyleToolAboutArt"
+            android:background="@mipmap/delete_icon"
+            android:id="@+id/delete_art"/>
+
+
+        <ImageButton
+            style="@style/StyleToolAboutArt"
+            android:layout_marginLeft="@dimen/canle20dp"
+            android:background="@mipmap/share_icon"
+            android:id="@+id/share_art"/>
+
+        <ImageButton
+            style="@style/StyleToolAboutArt"
+            android:layout_marginLeft="@dimen/canle20dp"
+            android:background="@mipmap/edit_icon"
+            android:id="@+id/edit_art"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:animateLayoutChanges="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/managet_tools_all_art">
+        <ImageButton
+            style="@style/StyleToolAboutArt"
+            android:background="@mipmap/delete_all_icon"
+            android:id="@+id/AAP_remove_art"
+            />
+
+
+        <ImageButton
+            style="@style/StyleToolAboutArt"
+            android:layout_marginLeft="@dimen/canle20dp"
+            android:background="@mipmap/new_art_icon"
+            android:id="@+id/AAP_new_art"
+            />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
